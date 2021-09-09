@@ -1,0 +1,27 @@
+def par(a):
+    i = 0
+    while i < len(a):
+        if a[i] % 2 == 0:
+            del a[i]
+        else:
+            i += 1
+    return a
+
+
+def added(a):
+    a.pop(-1)
+    a.pop(0)
+    return a
+
+def add(a):
+    n = int(input())
+    m = int(input())
+    n -= 1
+    a.insert(a[n], int(m))
+    return a
+
+
+a = []
+n = int(input())
+for i in range(n):
+    a.append(int(input()))
