@@ -1,27 +1,46 @@
-def par(a):
-    i = 0
-    while i < len(a):
-        if a[i] % 2 == 0:
-            del a[i]
+def parn(a): 
+    i = 0 
+    while i < len(a): 
+        if a[i] % 2 == 0: 
+            del a[i] 
+        else: 
+            i += 1 
+    return a 
+ 
+ 
+def add(a): 
+    a.pop(-1) 
+    a.pop(0) 
+    return a 
+
+
+def del3(a):
+    p = 0
+    while p < len(a):
+        if a[p] % 3 == 0:
+            a.insert(a[p], int(1))
+            p = p + 1
         else:
-            i += 1
+            p = p + 1
     return a
 
-
-def added(a):
-    a.pop(-1)
-    a.pop(0)
-    return a
-
-def add(a):
-    n = int(input())
-    m = int(input())
-    n -= 1
-    a.insert(a[n], int(m))
-    return a
-
-
-a = []
-n = int(input())
-for i in range(n):
-    a.append(int(input()))
+ 
+def ent(a): 
+    n = int(input("Chose the index to enter the number: ")) 
+    m = int(input("Chose the number: ")) 
+    n -= 1 
+    a.insert(a[n], int(m)) 
+    print("You number: - " + str(m) + " - is enter to the list") 
+    return a 
+ 
+ 
+a = [] 
+n = int(input("Chose the long of the list: ")) 
+for i in range(n): 
+    a.append(int(input("Chose the number: "))) 
+     
+     
+print(parn(a)) 
+print(del3(a)) 
+print(ent(a))
+print(add(a))
