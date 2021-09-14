@@ -14,11 +14,11 @@ def add(a):
     return a 
 
 
-def del3(a):
+def add3(a):
     p = 0
     while p < len(a):
         if a[p] % 3 == 0:
-            a.insert(a[p], int(1))
+            a.insert(a[p], int(23))
             p = p + 1
         else:
             p = p + 1
@@ -39,8 +39,8 @@ n = int(input("Chose the long of the list: "))
 for i in range(n): 
     a.append(int(input("Chose the number: "))) 
      
-     
-print(parn(a)) 
-print(del3(a)) 
+
+print(add3(a))
 print(ent(a))
+print(parn(a))
 print(add(a))
