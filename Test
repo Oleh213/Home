@@ -1,0 +1,20 @@
+def C(i, coins, cdict = None):
+    if cdict == None:
+        cdict = {}
+    if i <= 0:
+        cdict[i] = 0
+        return cdict[i]
+    elif i in cdict:
+        return cdict[i]
+    elif i in coins:
+        cdict[i] = 1
+        return cdict[i]
+    else:
+        min = 0
+        for cj in coins:
+            result = C(i - cj, coins)
+            if result != 0:
+                if min == 0 or (result + 1) < min:
+                    min = 1 + result
+        cdict[i] = min
+        return cdict[i]
