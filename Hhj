@@ -1,0 +1,11 @@
+def C(i, coins):
+
+    if i <= 0:
+        return 0
+
+    if i in cdict:
+        return cdict[i]
+    else:
+        answer = 1 + min([C(i - cj, coins) for cj in coins])
+        cdict[i] = answer
+        return answer
