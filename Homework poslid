@@ -1,0 +1,20 @@
+import numpy as np
+ 
+def is_inc(sequence):
+    return np.all(np.diff(sequence) > 0)
+ 
+def max_inc(sequence):
+    if is_inc(sequence):
+        return sequence
+ 
+    subs = [np.delete(sequence, i) for i in range(len(sequence))]
+ 
+    results_sub = [max_inc(sub) for sub in subs]
+    result = max(results_sub, key=lambda s: len(s))
+    return result
+ 
+n = int(input())
+seq  = list(map(int, input().split()[:n]))
+
+
+print(max_inc(seq))
