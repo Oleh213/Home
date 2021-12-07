@@ -1,18 +1,18 @@
 import numpy as np
  
-def is_inc(sequence):
-    return np.all(np.diff(sequence) > 0)
+def znach(poslidov):
+    return np.all(np.diff(poslidov) > 0)
  
-def max_inc(sequence):
-    if is_inc(sequence):
-        return sequence
+def max_inc(poslidov):
+    if znach(poslidov):
+        return poslidov
  
-    subs = [np.delete(sequence, i) for i in range(len(sequence))]
- 
+    subs = [np.delete(poslidov, i) for i in range(len(poslidov))]
     results_sub = [max_inc(sub) for sub in subs]
     result = max(results_sub, key=lambda s: len(s))
     return result
  
+
 n = int(input())
 seq  = list(map(int, input().split()[:n]))
 
